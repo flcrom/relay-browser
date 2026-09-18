@@ -1,0 +1,25 @@
+services:
+  browser:
+    build: ./browser
+    shm_size: 2gb
+    ports:
+      - "127.0.0.1:6080:6080"
+      - "127.0.0.1:9222:9222"
+    volumes:
+      - chrome-data:/data/chrome
+    restart: unless-stopped
+  coordinator:
+    image: node:22-bookworm-slim
+    working_dir: /app
+    command: npm start
+    environment:
+      PORT: 3000
+      RELAY_TOKEN: ${RELAY_TOKEN:-dev-only-token}
+      BROWSER_URL: http://localhost:6080/vnc.html?autoconnect=1&resize=scale
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - .:/app:ro
+    restart: unless-stopped
+volumes:
+  chrome-data:

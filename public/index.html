@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Relay Browser</title><link rel="stylesheet" href="/app.css"></head>
+<body>
+  <main>
+    <header><div class="mark">RB</div><div><h1>Relay Browser</h1><p>One browser. Clear control.</p></div><span id="status" class="pill">Connecting</span></header>
+    <section class="card hero">
+      <div><span class="eyebrow">CONTROL</span><h2 id="headline">Checking the session…</h2><p id="detail">The browser keeps its tabs, cookies and page state during handoff.</p></div>
+      <button id="primary" disabled>Open shared browser</button>
+    </section>
+    <section class="grid">
+      <article class="card"><span class="step">01</span><h3>Agent pauses</h3><p>A cooperative agent requests takeover before CAPTCHA, MFA, consent or another human-only step.</p></article>
+      <article class="card"><span class="step">02</span><h3>You take over</h3><p>Use the live browser directly. Nothing is copied to a separate window.</p></article>
+      <article class="card"><span class="step">03</span><h3>Agent resumes</h3><p>Click “Return to agent.” The same Chromium process continues from the current page.</p></article>
+    </section>
+    <p class="note">Relay Browser coordinates control. It does not solve or bypass CAPTCHA.</p>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body></html>

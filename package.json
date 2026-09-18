@@ -1,0 +1,14 @@
+{
+  "name": "relay-browser",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Human takeover for agent-driven browser sessions without losing state",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "demo:agent": "node scripts/demo-agent.js"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT"
+}
